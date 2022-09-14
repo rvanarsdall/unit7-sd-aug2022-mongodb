@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6320c20b125567808bc1e650",
+    "movieTitle": "Jurassic Park",
+    "movieDescription": "About dinosaurs",
+    "movieYear": 2022,
+    "isCurrentlyInTheaters": false,
+    "rating": 8
+  },
+  {
+    "_id": "6320c5faa7bd064137bcfbcc",
+    "movieTitle": "Thor: Love and Thunder",
+    "movieDescription": "Thor saving the world again",
+    "movieYear": 2022,
+    "isCurrentlyInTheaters": false,
+    "rating": 7
+  },
+  {
+    "_id": "6321001b1537f4ec1450c738",
+    "movieTitle": "Top Gun",
+    "movieDescription": "For Lieutenant Pete Mitchell and his friend and Co-Pilot Nick Bradshaw being accepted into an elite training school for fighter pilots is a dream come true. A tragedy, as well as personal demons, threaten Pete's dreams of becoming an Ace pilot.",
+    "movieYear": 1986,
+    "isCurrentlyInTheaters": false,
+    "rating": 7
+  },
+  {
+    "_id": "632100751537f4ec1450c73a",
+    "movieTitle": "Rocky 2",
+    "movieDescription": "After Rocky goes the distance with champ Apollo Creed, both try to put the fight behind them and move on. Rocky settles down with Adrian but can't put his life together outside the ring, while Creed seeks a rematch to restore his reputation. Soon enough, the `Master of Disaster` and the `Italian Stallion` are set on a collision course for a climactic battle that is brutal and unforgettable.",
+    "movieYear": 1979,
+    "isCurrentlyInTheaters": false,
+    "rating": 6
+  },
+  {
+    "_id": "632100bd1537f4ec1450c73c",
+    "movieTitle": "Anaconda",
+    "movieDescription": "A National Geographic film crew is taken hostage by an insane hunter, who takes them along on his quest to capture the world's largest - and deadliest - snake.",
+    "movieYear": 1997,
+    "isCurrentlyInTheaters": false,
+    "rating": 3
+  },
+  {
+    "_id": "632101181537f4ec1450c73e",
+    "movieTitle": "Batman the Dark Night",
+    "movieDescription": "Delve into the world of Batman and the vigilante justice that he brought to the city of Gotham. Batman is a man who, after experiencing great tragedy, devotes his life to an ideal--but what happens when one man takes on the evil underworld alone? Examine why Batman is who he is--and explore how a boy scarred by tragedy becomes a symbol of hope to everyone else.",
+    "movieYear": 2008,
+    "isCurrentlyInTheaters": false,
+    "rating": 8
+  }
+]
