@@ -5,7 +5,8 @@
 const router = require("express").Router();
 const Movie = require("../models/movies.model");
 const SeedData = require("../assets/seed.data.json");
-router.post("/add", async (req, res) => {
+const validateSession = require("../middleware/validate-session");
+router.post("/add", validateSession, async (req, res) => {
   console.log(req.body);
   const {
     movieTitle,
@@ -20,6 +21,7 @@ router.post("/add", async (req, res) => {
     movieYear,
     isCurrentlyInTheaters,
     rating,
+    ownerid: req.user._id,
   });
 
   try {
@@ -47,13 +49,16 @@ router.get("/", async (req, res) => {
 //? localhost:4000/movie/
 //? Method: Delete
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", validateSession, async (req, res) => {
   console.log(req.params);
   try {
-    const deletedMovie = await Movie.deleteOne({ _id: req.params.id });
+    const deletedMovie = await Movie.deleteOne({
+      _id: req.params.id,
+      ownerid: req.user._id,
+    });
     res.json({
       message:
-        deletedMovie.deletedCount > 0 ? "movie removed" : "movie not found",
+        deletedMovie.deletedCount > 0 ? "movie removed" : "movie not removed",
 
       deletedMovie: deletedMovie,
     });
@@ -114,8 +119,9 @@ router.patch("/update/:id", async (req, res) => {
 //? Endpoint should be ("/:id")
 //? Full URL is localhost:4000/movie/6320c5faa7bd064137bcfbcc
 //? Method: GET
-router.get("/:id", async (req, res) => {
+router.get("/:id", validateSession, async (req, res) => {
   try {
+    console.log(req.test);
     const movie = await Movie.findById(req.params.id);
     res.json({ movie: movie });
   } catch (error) {
