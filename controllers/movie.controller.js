@@ -80,20 +80,30 @@ router.get("/insertAll", async (req, res) => {
 router.patch("/update/:id", async (req, res) => {
   console.log(req.params);
   try {
-    const movie = await Movie.findById(req.params.id);
+    const filter = { _id: req.params.id };
+    const dataToReplace = req.body.movie;
+    const returnOptions = {
+      returnOriginal: false,
+    };
+    const movie = await Movie.findOneAndUpdate(
+      filter,
+      dataToReplace,
+      returnOptions
+    );
+    // const movie = await Movie.findById(req.params.id);
 
-    if (req.body.movie.rating) {
-      movie.rating = req.body.movie.rating;
-    }
-    if (req.body.movie.movieTitle) {
-      movie.movieTitle = req.body.movie.movieTitle;
-    }
+    // if (req.body.movie.rating) {
+    //   movie.rating = req.body.movie.rating;
+    // }
+    // if (req.body.movie.movieTitle) {
+    //   movie.movieTitle = req.body.movie.movieTitle;
+    // }
 
-    if (req.body.movie.movieYear) {
-      movie.movieYear = req.body.movie.movieYear;
-    }
+    // if (req.body.movie.movieYear) {
+    //   movie.movieYear = req.body.movie.movieYear;
+    // }
 
-    movie.save();
+    // movie.save();
     res.json({ message: "movie updated", movie: movie });
   } catch (error) {
     res.json({ message: error.message });
@@ -104,5 +114,12 @@ router.patch("/update/:id", async (req, res) => {
 //? Endpoint should be ("/:id")
 //? Full URL is localhost:4000/movie/6320c5faa7bd064137bcfbcc
 //? Method: GET
-
+router.get("/:id", async (req, res) => {
+  try {
+    const movie = await Movie.findById(req.params.id);
+    res.json({ movie: movie });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
 module.exports = router;
