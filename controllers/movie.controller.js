@@ -102,6 +102,7 @@ router.patch("/update/:id", async (req, res) => {
 
 //? Create an endpoint that will get a record by it's id
 //? Endpoint should be ("/:id")
-//? Full URL is localhost:4000/movie/
+//? Full URL is localhost:4000/movie/6320c5faa7bd064137bcfbcc
+//? Method: GET
 
 module.exports = router;
