@@ -95,20 +95,7 @@ router.patch("/update/:id", async (req, res) => {
       dataToReplace,
       returnOptions
     );
-    // const movie = await Movie.findById(req.params.id);
 
-    // if (req.body.movie.rating) {
-    //   movie.rating = req.body.movie.rating;
-    // }
-    // if (req.body.movie.movieTitle) {
-    //   movie.movieTitle = req.body.movie.movieTitle;
-    // }
-
-    // if (req.body.movie.movieYear) {
-    //   movie.movieYear = req.body.movie.movieYear;
-    // }
-
-    // movie.save();
     res.json({ message: "movie updated", movie: movie });
   } catch (error) {
     res.json({ message: error.message });
