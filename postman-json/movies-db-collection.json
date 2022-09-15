@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "e036fb44-cd02-402f-909d-bb7e02a1fab6",
+    "name": "Movies Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7727936"
+  },
+  "item": [
+    {
+      "name": "Movie Endpoints",
+      "item": [
+        {
+          "name": "Movie Add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{JWT}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"movie\": {\n        \"movieTitle\": \"Batman the Dark Night\",\n        \"movieDescription\": \"Delve into the world of Batman and the vigilante justice that he brought to the city of Gotham. Batman is a man who, after experiencing great tragedy, devotes his life to an ideal--but what happens when one man takes on the evil underworld alone? Examine why Batman is who he is--and explore how a boy scarred by tragedy becomes a symbol of hope to everyone else.\",\n        \"movieYear\": 2008, \n        \"isCurrentlyInTheaters\": false,\n        \"rating\": 8\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/movie/add",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Movie Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/movie/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Movie Update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/movie/update/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", "update", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6321001b1537f4ec1450c738"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Movie Get All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/movie/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/movie/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Seed Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/movie/insertAll",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["movie", "insertAll"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Endpoints",
+      "item": [
+        {
+          "name": "User Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user\": {\n        \"email\": \"jmiles@email.com\",\n        \"password\": \"password1234\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/user/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["user", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User Signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user\": {\n        \"firstName\": \"jeff\",\n        \"lastName\": \"Miles\",\n        \"email\": \"jmiles@email.com\",\n        \"password\": \"password1234\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/user/signup",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["user", "signup"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
