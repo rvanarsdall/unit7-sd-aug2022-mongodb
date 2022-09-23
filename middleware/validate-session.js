@@ -16,6 +16,8 @@ const validateSession = async (req, res, next) => {
     if (user) {
       req.user = user;
       return next();
+    } else {
+      throw Error("user not found");
     }
   } catch (error) {
     res.json({ message: error.message });

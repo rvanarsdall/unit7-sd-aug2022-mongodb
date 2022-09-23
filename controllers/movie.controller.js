@@ -35,7 +35,7 @@ router.post("/add", validateSession, async (req, res) => {
 // ? Build a route to get all the movie data ("/")
 //? Method: GET
 // ? Test the route
-router.get("/", async (req, res) => {
+router.get("/", validateSession, async (req, res) => {
   try {
     const movie = await Movie.find();
     res.json({ movie: movie });
